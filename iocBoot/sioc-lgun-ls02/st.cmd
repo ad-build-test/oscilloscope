@@ -7,7 +7,6 @@
 
 epicsEnvSet("IOC_NAME", "SIOC:LGUN:LS02")
 epicsEnvSet("NODE_NAME", "scop-lgun-ls02")
-epicsEnvSet("NODE_NAME", "scop-b34-cd01")
 epicsEnvSet("P", "SCOP:LGUN:LS02")
 
 < ../common/generalInit.cmd
