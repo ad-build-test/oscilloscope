@@ -1,0 +1,20 @@
+# Abs: Slow BLM Signal Archive List
+#
+# File: bcs_plc_blm.tpl-arch
+#
+# Format:  PVNAME     INTERVAL     [ monitor | scan ]
+# The interval is in seconds
+#
+# Name                         Interval Mode
+#---------------------------------------------------
+$(PVNAME)			$(RATE=10)	monitor
+$(PVNAME).HIHI			1.0     monitor
+$(PVNAME).HIGH			1.0     monitor
+$(PVNAME).LOLO			1.0     monitor
+$(PVNAME).LOW			1.0     monitor
+
+
+
+
+
+
