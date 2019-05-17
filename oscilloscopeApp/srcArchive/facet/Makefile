@@ -21,7 +21,6 @@ include $(TOP)/configure/CONFIG
 
 # Install archive list into $TOP/archive
 #ARCHIVE += sioc-sys1-bc01.archive
-ARCHIVE += sioc-in10-bc01.archive
 
 include $(TOP)/configure/RULES
 #----------------------------------------

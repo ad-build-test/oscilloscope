@@ -20,7 +20,7 @@ include $(TOP)/configure/CONFIG
 #
 
 # Install archive list into $TOP/archive
-ARCHIVE += sioc-gunb-bc01.archive
+ARCHIVE += sioc-lgun-sc01.archive
 
 include $(TOP)/configure/RULES
 #----------------------------------------
