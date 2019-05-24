@@ -30,8 +30,8 @@ epicsEnvSet("PORT", "${NODE_NAME}-port")
 
 # Power cycle scope. Workaround for network connection bugs in this series scope.
 # Function is from asyn vxi11 support
-#TDS3000Reboot ${NODE_NAME}
-#epicsThreadSleep(50)
+TDS3000Reboot ${NODE_NAME}
+epicsThreadSleep(50)
 vxi11Configure("$(UDPP)","$(NODE_NAME)",0,0.0,"inst0",0,0)
 dbLoadRecords("db/asynRecord.db","P=$(P),R=ASYN_VXI11,PORT=$(UDPP),ADDR=0,IMAX=0,OMAX=0")
 drvTDSConfigure("$(PORT)","$(UDPP)")

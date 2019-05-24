@@ -18,4 +18,4 @@ iocInit
 ## Start any sequence programs
 #seq sncxxx,"user=gwbrown"
 
-< ../common/restore.cmd
+< iocBoot/common/autoSaveRun.cmd

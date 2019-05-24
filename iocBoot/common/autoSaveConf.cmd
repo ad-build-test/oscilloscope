@@ -2,18 +2,18 @@
 #
 #  Abs:  Autosave initalization for a soft IOC
 #
-#  Name: init_restore.cmd.soft  
+#  Name: autoSaveConf.cmd
 #
 #  Rem:  Upon entry we expect to be at location TOP
 #        and the following macros must be defined.
-#        Note that all other environment variables 
+#        Note that all other environment variables
 #        used within this file are defined in envPaths.
 #
 #         IOC_DATA - IOC Data path
 #         IOC      - IOC name               ex) sioc-li20-mc01
 #         IOC_NAME - IOC device name        ex) SIOC:LI20:MC01
 #
-#  Facility:  EED BCS Control
+#  Facility:  Any
 #
 #  Auth: 15-May-2018, Kristi Luchini  (LUCHINI)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name (USERNAME)

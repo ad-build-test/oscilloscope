@@ -47,3 +47,6 @@ oscilloscope_registerRecordDeviceDriver(pdbbase)
 < ${ACF_INIT}
 epicsThreadSleep(0.3)
 
+< iocBoot/common/autoSaveConf.cmd
+< iocBoot/common/iocAdmin.cmd
+
