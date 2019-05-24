@@ -14,6 +14,3 @@ dbLoadRecords("db/iocAdminScanMon.db","IOC=${IOC_NAME}")
 # The python parser is part of iocAdmin
 dbLoadRecords("db/iocRelease.db","IOC=${IOC_NAME}")
 
-# This is from the seq module to show status of SNL programs
-dbLoadRecords("db/devSeqCar.db","SIOC=${IOC_NAME}")
-
