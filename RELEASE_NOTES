@@ -1,0 +1,19 @@
+#==============================================================
+#
+#  Name: RELEASE_NOTES
+#
+#  Rem:  This files describes release notes for
+#        the general Oscilloscope IOC Application, using
+#        scope-asyn module based on Zen's general scope support.
+#
+#  Auth: 25-Feb-2020, G. Brown         (gwbrown)
+#  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
+#--------------------------------------------------------------
+#  Mod
+#==============================================================
+#
+
+R1.0.1        G. Brown (gwbrown):
+25-Feb-2020   Fixed IOC name macro in sioc-lgun-sc01
+
+

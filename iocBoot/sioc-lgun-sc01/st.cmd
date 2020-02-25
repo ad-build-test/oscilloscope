@@ -5,7 +5,7 @@
 
 < envPaths
 
-epicsEnvSet("IOC_NAME", "SIOC:LGUN:LS02")
+epicsEnvSet("IOC_NAME", "SIOC:LGUN:SC01")
 epicsEnvSet("NODE_NAME", "scop-lgun-ls02")
 epicsEnvSet("P", "SCOP:LGUN:LS02")
 
