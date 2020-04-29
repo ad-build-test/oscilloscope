@@ -40,7 +40,6 @@ dbLoadRecords("db/asynRecord.db","P=$(P),R=ASYN_TDS,PORT=$(PORT),ADDR=0,IMAX=0,O
 #asynSetTraceMask("L0",-1,0x0f)
 #asynSetTraceIOMask("L0",-1,0x6)
 
-# Load IOC Administration Databse
 dbLoadRecords("db/scope.db", "P=$(P),NAME=TDS,PORT=$(PORT)")
 dbLoadRecords("db/tds.db", "P=$(P),PORT=$(PORT)")
 
