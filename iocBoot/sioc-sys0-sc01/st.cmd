@@ -9,6 +9,10 @@ epicsEnvSet("IOC_NAME", "SIOC:SYS0:SC01")
 < ../common/generalInit.cmd
 pwd()
 
+epicsEnvSet("NODE_NAME", "scop-li10-nw01")
+epicsEnvSet("P", "SCOP:LI10:NW01")
+< iocBoot/common/tds.cmd
+
 epicsEnvSet("NODE_NAME", "scop-lr20-ls01")
 epicsEnvSet("P", "SCOP:LR20:LS01")
 < iocBoot/common/tds.cmd
