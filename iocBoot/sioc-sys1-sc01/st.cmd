@@ -26,7 +26,7 @@ epicsEnvSet("P", "SCOP:LI20:LOS1")
 < iocBoot/common/tds.cmd
 
 epicsEnvSet("NODE_NAME", "scop-in10-fc01")
-epicsEnvSet("P", "SCOP:MCC0:SC02")
+epicsEnvSet("P", "SCOP:IN10:FC01")
 < iocBoot/common/tds.cmd
 
 iocInit
