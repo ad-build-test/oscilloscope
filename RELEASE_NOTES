@@ -13,6 +13,10 @@
 #==============================================================
 #
 
+R1.0.2        G. Brown (gwbrown):
+29-Apr-2020   Added the LCLS scopes to sioc-sys0-sc01
+              Added the FACET scopes to sioc-sys1-sc01
+
 R1.0.1        G. Brown (gwbrown):
 25-Feb-2020   Fixed IOC name macro in sioc-lgun-sc01
 
