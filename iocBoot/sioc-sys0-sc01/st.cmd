@@ -25,10 +25,6 @@ epicsEnvSet("NODE_NAME", "scop-mcc0-sc01")
 epicsEnvSet("P", "SCOP:MCC0:SC01")
 < iocBoot/common/tds.cmd
 
-epicsEnvSet("NODE_NAME", "scop-mcc0-sc02")
-epicsEnvSet("P", "SCOP:MCC0:SC02")
-< iocBoot/common/tds.cmd
-
 epicsEnvSet("NODE_NAME", "scop-mcc0-sc03")
 epicsEnvSet("P", "SCOP:MCC0:SC03")
 < iocBoot/common/tds.cmd
