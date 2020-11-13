@@ -13,6 +13,9 @@
 #==============================================================
 #
 
+R1.0.3        G. Brown (gwbrown):
+12-Nov-2020   FACET: Add second Faraday cup scope scop-in10-fc02
+
 R1.0.2        G. Brown (gwbrown):
 29-Apr-2020   Added the LCLS scopes to sioc-sys0-sc01
               Added the FACET scopes to sioc-sys1-sc01
