@@ -1,0 +1,21 @@
+# LCLS-II Injector diagnostic scope Archive List
+
+file archive_iocAdmin.archive
+{
+pattern { IOC            }
+		{ SIOC:LGUN:LS02 }
+}
+
+# End of file
+
+
+
+
+
+
+
+
+
+
+
+
