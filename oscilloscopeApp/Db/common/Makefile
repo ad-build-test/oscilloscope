@@ -7,6 +7,9 @@ DB_INSTALLS += $(IOCADMIN)/db/iocAdminSoft.db
 DB_INSTALLS += $(IOCADMIN)/db/iocAdminScanMon.db
 IOCRELEASE_DB += iocRelease.db
 
+# Install Database to autosave suport
+DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
+
 # Asyn serial devices
 DB += $(ASYN)/db/asynRecord.db
 
