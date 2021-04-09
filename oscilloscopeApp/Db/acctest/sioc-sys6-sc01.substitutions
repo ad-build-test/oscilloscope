@@ -13,6 +13,9 @@
 # Rev:  dd-mmm-yyyy, First Lastname  (USERNAME)
 #--------------------------------------------------------------
 #  Mod:
+#        09-Apr-2021, K. Luchini      (LUCHINI):
+#         comment out eioc-xt01-dso0001, as it's been removed,
+#         but it may be replaced later
 #       08-Apr-2021, K. Luchihni     (LUCHINI):
 #         Mege from tds-asyn-lcls st.cmd, 
 #
@@ -21,7 +24,7 @@
 file sc_common.db
 {
   pattern { dev        , node             }
-          { TDS:XT01:1 , eioc-xt01-dso001 }
+#          { TDS:XT01:1 , eioc-xt01-dso001 }
           { TDS:XT01:2 , eioc-xt01-dso002 }
 }
 
