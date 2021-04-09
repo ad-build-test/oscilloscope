@@ -14,6 +14,8 @@
 # Rev:  dd-mmm-yyyy, First Lastname  (USERNAME)
 #--------------------------------------------------------------
 #  Mod:
+#       09-Apr-2021, K. Luchihni     (LUCHINI):
+#         chg P macro instansiation for tds.db and scope.db
 #       08-Apr-2021, K. Luchihni     (LUCHINI):
 #         extract from st.cmd
 #
@@ -21,14 +23,14 @@
 #
 file scope.db
 {
-  pattern { P        , PORT         , NAME          }
-          { $(dev):  , $(node)-port , "TDS $(node)" }
+  pattern { P       , PORT         , NAME  }
+          { $(dev)  , $(node)-port , "TDS" }
 }
 
 file tds.db
 {   
-  pattern { P       , PORT         }
-          { $(dev): , $(node)-port }
+  pattern { P      , PORT         }
+          { $(dev) , $(node)-port }
 }
 
 file asynRecord.db
