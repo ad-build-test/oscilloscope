@@ -24,10 +24,10 @@
 #==============================================================
 #
 # Set environment variables
-epicsEnvSet("IOC_NAME"  , "SIOC:LGUN:SC01")
-epicsEnvSet("LOCATION"  ,"facet-daemon1")
+epicsEnvSet("IOC_NAME"  ,"SIOC:LGUN:SC01")
+epicsEnvSet("LOCATION"  ,"lcls-daemon1")
 epicsEnvSet("ENGINEER"  ,"Garth Brown")
-epicsEnvSet("NODE_NAME" , "scop-lgun-ls02")
+epicsEnvSet("NODE_NAME" ,"scop-lgun-ls02")
 
 # Load common startup script
 < ../common/st.cmd.soft
