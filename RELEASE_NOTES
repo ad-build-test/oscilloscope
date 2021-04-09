@@ -1,4 +1,4 @@
-#==============================================================
+os	#==============================================================
 #
 #  Name: RELEASE_NOTES
 #
@@ -8,6 +8,9 @@
 #
 #==============================================================
 #
+R1.0.5        K. Luchini (luchini):
+09-Apr-2021   TestFac: chg iocBoot/sioc-sys6-nw01 to sioc-sys6-sc01
+
 R1.0.4        K. Luchini (luchini):
 08-Apr-2021   TestFac: merge tds-asyn-lcls iocs for xta into
               into sioc-sys6-sc01. decommisoine the tds-asyn-lcls
