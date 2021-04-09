@@ -4,7 +4,7 @@
 #
 #  Facility: Test-Facility Oscilloscope Controls
 #
-#  Auth: 09-Apr-2021, Kristi Luchini  (USERNAME)
+#  Auth: 09-Apr-2021, Kristi Luchini  (LUCHINI)
 #  Rev:  dd-mmm-yyyy, Reviewers Name  (USERNAME)
 #--------------------------------------------------------------
 #  Mod:

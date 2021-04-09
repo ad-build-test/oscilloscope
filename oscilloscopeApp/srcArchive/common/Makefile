@@ -4,7 +4,7 @@
 #
 #  Facility: EED Oscilloscope Controls
 #
-#  Auth: 06-Mar-2019, Kristi Luchini  (USERNAME)
+#  Auth: 06-Mar-2019, Kristi Luchini  (LUCHINI)
 #  Rev:  dd-mmm-yyyy, Reviewers Name  (USERNAME)
 #--------------------------------------------------------------
 #  Mod:
