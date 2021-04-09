@@ -1,0 +1,41 @@
+#===============================================================
+#
+# Abs:  Database for common VXI11/TDS Oscilloscopes
+#
+# File: sc_common.substitutions
+#
+#
+# Side: Must follow the LCLS naming conventions.
+#       This file has no hardware templates included.
+#
+# Facility: EED Oscilloscope Controls
+#
+# Auth: 20-May-2017, Garth Brown     (GBROWN)
+# Rev:  dd-mmm-yyyy, First Lastname  (USERNAME)
+#--------------------------------------------------------------
+#  Mod:
+#       08-Apr-2021, K. Luchihni     (LUCHINI):
+#         extract from st.cmd
+#
+#===============================================================
+#
+file scope.db
+{
+  pattern { P        , PORT         , NAME          }
+          { $(dev):  , $(node)-port , "TDS $(node)" }
+}
+
+file tds.db
+{   
+  pattern { P       , PORT         }
+          { $(dev): , $(node)-port }
+}
+
+file asynRecord.db
+{
+  pattern { P       , R          , PORT          , ADDR , IMAX , OMAX }
+          { $(dev): , ASYN_VXI11 , $(node)-vxi11 , 0    , 0    , 0    } 
+          { $(dev): , ASYN_TDS   , $(node)-port  , 0    , 0    , 0    }
+}
+
+# End of file
