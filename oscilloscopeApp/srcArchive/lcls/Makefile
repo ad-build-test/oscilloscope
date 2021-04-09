@@ -1,8 +1,8 @@
 #==============================================================
 #
-#  Abs: Generate LCLS BCS IOCs Archive list  
+#  Abs: Generate IOCs Archive list  
 #
-#  Facility: LCLS Beam Containment System Controls
+#  Facility: LCLS Oscilloscope Controls
 #
 #  Auth: 06-Mar-2019, Kristi Luchini  (USERNAME)
 #  Rev:  dd-mmm-yyyy, Reviewers Name  (USERNAME)
@@ -18,15 +18,8 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 #
-
 # Install archive list into $TOP/archive
-#ARCHIVE += ioc-in20-bc01.archive
-#ARCHIVE += ioc-li24-bc01.archive
-#ARCHIVE += ioc-li28-bc01.archive
-#ARCHIVE += ioc-ltu1-bc01.archive
-#ARCHIVE += ioc-ltu1-bc02.archive
-#ARCHIVE += ioc-dmp1-bc01.archive
-#ARCHIVE += ioc-mcc0-bc01.archive
+ARCHIVE += sioc-lgun-sc01.archive
 
 include $(TOP)/configure/RULES
 #----------------------------------------
