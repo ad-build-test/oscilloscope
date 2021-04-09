@@ -1,0 +1,28 @@
+#===============================================================
+#
+# Abs:  Oscilloscope dataabase 
+#
+# File: sioc-sys6-sc01.substitutions
+#
+# Side: Must follow the LCLS naming conventions.
+#       This file has no hardware templates included.
+#
+# Facility: XTA Oscilloscope Controls
+#
+# Auth: 20-May-2017, Garth Brown     (GBROWN)
+# Rev:  dd-mmm-yyyy, First Lastname  (USERNAME)
+#--------------------------------------------------------------
+#  Mod:
+#       08-Apr-2021, K. Luchihni     (LUCHINI):
+#         Mege from tds-asyn-lcls st.cmd, 
+#
+#===============================================================
+#
+file sc_common.db
+{
+  pattern { dev        , node             }
+          { TDS:XT01:1 , eioc-xt01-dso001 }
+          { TDS:XT01:2 , eioc-xt01-dso002 }
+}
+
+# End of file
