@@ -9,9 +9,10 @@
 #==============================================================
 #
 R1.0.4        K. Luchini (luchini):
-08-Apr-2021   TestFac: tds-asyn-lcls iocs for xta and asta 
-              into sioc-sys6-sc01 and xta into sioc-sys7-sc01,
-              respectively
+08-Apr-2021   TestFac: merge tds-asyn-lcls iocs for xta into
+              into sioc-sys6-sc01. decommisoine the tds-asyn-lcls
+              asta iocs sioc-as01-ls01 and sioc-as01-ls01 but keep
+              IPs for pcds use for asta
 
 R1.0.3        G. Brown (gwbrown):
 12-Nov-2020   FACET: Add second Faraday cup scope scop-in10-fc02
