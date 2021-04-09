@@ -1,0 +1,32 @@
+#===============================================================
+#
+# Abs:  Oscilloscope dataabase 
+#
+# File: sioc-sys0-sc01.substitutions
+#
+# Side: Must follow the LCLS naming conventions.
+#       This file has no hardware templates included.
+#
+# Facility: LCLS Oscilloscope Controls
+#
+# Auth: 20-May-2017, Garth Brown     (GBROWN)
+# Rev:  dd-mmm-yyyy, First Lastname  (USERNAME)
+#--------------------------------------------------------------
+#  Mod:
+#       08-Apr-2021, K. Luchihni     (LUCHINI):
+#         extract from st.cmd, but remove decommisioned
+#         scopes sioc-und1-blf1,sioc-und1-sc01, sioc-und1-sc02
+#
+#===============================================================
+#
+file sc_common.db
+{
+  pattern { dev            , node          }
+          { SCOP:LI10:NW01 ,sioc-li10-nw01 }
+          { SCOP:LR20:LS01 ,sioc-lr20-ls01 }
+          { SCOP:LR20:LS02 ,sioc-lr20-ls02 }
+          { SCOP:MCC0:SC01 ,sioc-mcc0-sc01 }
+          { SCOP:MCC0:SC03 ,sioc-mcc0-sc03 }
+}
+
+# End of file
