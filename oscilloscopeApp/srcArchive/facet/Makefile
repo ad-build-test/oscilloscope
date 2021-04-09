@@ -1,8 +1,8 @@
 #==============================================================
 #
-#  Abs: Generate FACET-II BCS IOCs Archive list  
+#  Abs: Generate IOCs Archive list  
 #
-#  Facility: FACET-II Beam Containment System Controls
+#  Facility: FACET-II Oscilloscope Controls
 #
 #  Auth: 06-Mar-2019, Kristi Luchini  (USERNAME)
 #  Rev:  dd-mmm-yyyy, Reviewers Name  (USERNAME)
@@ -18,9 +18,8 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 #
-
 # Install archive list into $TOP/archive
-#ARCHIVE += sioc-sys1-bc01.archive
+ARCHIVE += sioc-sys1-sc01.archive
 
 include $(TOP)/configure/RULES
 #----------------------------------------
