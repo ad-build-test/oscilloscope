@@ -2,7 +2,7 @@
 #
 #  Abs: Common Archive templates
 #
-#  Facility: EED Beam Containment System Controls
+#  Facility: EED Oscilloscope Controls
 #
 #  Auth: 06-Mar-2019, Kristi Luchini  (USERNAME)
 #  Rev:  dd-mmm-yyyy, Reviewers Name  (USERNAME)
@@ -21,12 +21,7 @@ include $(TOP)/configure/CONFIG
 ARCHIVE += $(IOCADMIN)/archive/archive_iocAdmin.archive
 
 # Install archive list into $TOP/archive
-ARCHIVE += bcs_plc_blm.tpl-arch
-ARCHIVE += bcs_evr.tpl-arch
-ARCHIVE += bcs_evrTrig.tpl-arch
-ARCHIVE += bcs_plcAdmin.tpl-arch
-ARCHIVE += bcs_monitor.tpl-arch
-ARCHIVE += bcs_scan.tpl-arch
+#ARCHIVE += tds.tpl-arch
 
 include $(TOP)/configure/RULES
 #----------------------------------------
