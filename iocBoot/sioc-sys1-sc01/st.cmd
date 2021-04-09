@@ -1,42 +1,59 @@
 #!../../bin/rhel6-x86_64/oscilloscope
+#==============================================================
+#
+#  Abs:  Startup Script for the FACET-II Scopes
+#
+#  Name: st.cmd
+#
+#  Desc:  This is the EPICS startup script for a soft IOC
+#         that will control the vacuum system in
+#         the FACET-II injector, which is located at
+#         sector 10. This IOC will be using the
+#         facet facility computer control infrastructure.
+#
+#  Facility:  FACET-II Oscilliscope Controls
+#
+#  Auth: 29-Apr-2020, Garth Brown     (GBROWN):
+#  Rev:  dd-mmm-yyyy, Reviewer's Name (USERNAME)
+#--------------------------------------------------------------
+#  Mod:
+#        08-Apr-2020, K. Luchini      (LUCHINI):
+#         add standard header
+#         chg db loaded
+#
+#==============================================================
+#
+# Set environment variables
+epicsEnvSet("IOC_NAME" ,"SIOC:SYS1:SC01")
+epicsEnvSet("LOCATION" ,"facet-daemon1")
+epicsEnvSet("ENGINEER" ,"Garth Brown")
 
-#- Support for general purpose oscilloscopes
+# Load common startup script
+< ../common/st.cmd.soft
 
-< envPaths
+# Initalize hardware
+epicsEnvSet("NODE_NAME","scop-in10-fc01")
+< iocBoot/common/init_asyn.cmd
+epicsEnvSet("NODE_NAME","scop-in10-fc02")
+< iocBoot/common/init_asyn.cmd
+epicsEnvSet("NODE_NAME","scop-mcc0-fc02")
+< iocBoot/common/init_asyn.cmd
 
-epicsEnvSet("IOC_NAME", "SIOC:SYS1:SC01")
+# Load record instances
+dbLoadRecords("db/${IOC}.db")
 
-< ../common/generalInit.cmd
-pwd()
+# Setup autosave/restore
+< iocBoot/common/autoSaveConf.cmd
 
-#epicsEnvSet("NODE_NAME", "scop-la20-ls21")
-#epicsEnvSet("P", "SCOP:LA20:LS21")
-#< iocBoot/common/tds.cmd
+# Start EPICS
+iocInit()
 
-#epicsEnvSet("NODE_NAME", "scop-li20-ex01")
-#epicsEnvSet("P", "SCOP:LI20:EX01")
-#< iocBoot/common/tds.cmd
+# Turn on caPutLogging:
+# Log values only on change to the iocLogServer:
+caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
+caPutLogShow(2)
 
-#epicsEnvSet("NODE_NAME", "scop-li20-ex02")
-#epicsEnvSet("P", "SCOP:LI20:EX02")
-#< iocBoot/common/tds.cmd
-
-#epicsEnvSet("NODE_NAME", "scop-li20-los1")
-#epicsEnvSet("P", "SCOP:LI20:LOS1")
-#< iocBoot/common/tds.cmd
-
-epicsEnvSet("NODE_NAME", "scop-in10-fc01")
-epicsEnvSet("P", "SCOP:IN10:FC01")
-< iocBoot/common/tds.cmd
-
-epicsEnvSet("NODE_NAME", "scop-in10-fc02")
-epicsEnvSet("P", "SCOP:IN10:FC02")
-< iocBoot/common/tds.cmd
-
-epicsEnvSet("NODE_NAME", "scop-mcc0-sc02")
-epicsEnvSet("P", "SCOP:MCC0:SC02")
-< iocBoot/common/tds.cmd
-
-iocInit
-
+# Start autosave routines to save our data
 < iocBoot/common/autoSaveRun.cmd
+
+# End of file
