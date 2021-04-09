@@ -1,18 +1,25 @@
 TOP=../../..
 include $(TOP)/configure/CONFIG
 #----------------------------------------
-#  ADD MACRO DEFINITIONS AFTER THIS LINE
+# ADD MACRO DEFINITIONS AFTER THIS LINE
+# Install IOC monitoring
+DB_INSTALLS += $(IOCADMIN)/db/iocAdminSoft.db
+DB_INSTALLS += $(IOCADMIN)/db/iocAdminScanMon.db
+IOCRELEASE_DB += iocRelease.db
 
-#----------------------------------------------------
-# Create and install (or just install) into <top>/db
-# databases, templates, substitutions like this
-#DB += xxx.db
+# Asyn serial devices
+DB += $(ASYN)/db/asynRecord.db
 
-#----------------------------------------------------
-# If <anyname>.db template is not named <anyname>*.template add
-# <anyname>_template = <templatename>
+# Scope databases
+DB += $(SCOPEASYN)/db/scope.db
+DB += $(SCOPEASYN)/db/tds.db
+
+DB += sc_common.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
+#
+# End of file
+
 
