@@ -6,12 +6,12 @@
 #        the general Oscilloscope IOC Application, using
 #        scope-asyn module based on Zen's general scope support.
 #
-#  Auth: 25-Feb-2020, G. Brown         (gwbrown)
-#  Rev:  dd-mmm-yyyy, Reviewer's Name    (USERNAME)
-#--------------------------------------------------------------
-#  Mod
 #==============================================================
 #
+R1.0.4        K. Luchini (luchini):
+08-Apr-2021   TestFac: tds-asyn-lcls iocs for xta and asta 
+              into sioc-sys6-sc01 and xta into sioc-sys7-sc01,
+              respectively
 
 R1.0.3        G. Brown (gwbrown):
 12-Nov-2020   FACET: Add second Faraday cup scope scop-in10-fc02
