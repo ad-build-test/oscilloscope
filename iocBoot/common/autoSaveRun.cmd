@@ -2,18 +2,15 @@
 #
 #  Abs:  Start the autosave task (for a soft IOC)
 #
-#  Name: restore.cmd.soft
-#
-#  Rem:  Upon entry we expect to be at location TOP
-#        and the following macros must be defined.
-#        Note that all other environment variables
-#        used within this file are defined in envPaths.
-#
-#         TOP      - IOC Application path
-#         IOC      - IOC name               ex) sioc-sys1-bc01
-#         IOC_DATA - IOC Data pat
+#  Name: autoSaveRun.cmd
 #
 #  Side: load this script after iocInit
+#
+#       Upon entry this script expects the following
+#       macros must be defined:
+#
+#         IOC      - IOC name, lower case (e.g. sioc-sys0-sc01)
+#         IOC_DATA - path to data area for ioc
 #
 #       "In the lore that has built up around autosave,
 #        PV's that should be restored only before record
@@ -26,7 +23,15 @@
 #        restored only during autosave's pass-0."
 #           - from autosave documentation
 #
-#  Facility:  EED BCS Control
+#        This script expects the following
+#        macros tobe defined upon entry:
+#          a) TOP        - Enviroment varilable for path to top of IOC Application
+#          b) /data      - NFS Mount for IOC data directory
+#          c) the status prefix has been set for autosave
+#          d) the request and save files locations have been dset
+#          e) the save_restoreStatus.db has been loaded
+#
+#  Facility:  EED Oscilloscope Control
 #
 #  Auth: 15-May-2018, Kristi Luchini  (LUCHINI)
 #  Rev:  dd-mmm-yyyy, Reviewer's Name (USERNAME)
