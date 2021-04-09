@@ -1,46 +1,65 @@
 #!../../bin/rhel6-x86_64/oscilloscope
+#==============================================================
+#
+#  Abs:  Startup Script for the Laser GunB Scope
+#
+#  Name: st.cmd
+#
+#  Desc:  This is the EPICS startup script for a soft IOC
+#         that will control the vacuum system in
+#         the FACET-II injector, which is located at
+#         sector 10. This IOC will be using the
+#         facet facility computer control infrastructure.
+#
+#  Facility:  LCLS Oscilliscope Controls
+#
+#  Auth: 29-Apr-2020, Garth Brown     (GBROWN):
+#  Rev:  dd-mmm-yyyy, Reviewer's Name (USERNAME)
+#--------------------------------------------------------------
+#  Mod:
+#        08-Apr-2020, K. Luchini      (LUCHINI):
+#         add standard header
+#         chg db loaded
+#         decommission scop-und1-sc01, sioc-und1-sc02
+#         and sioc-und1-blf1
+#
+#==============================================================
+#
+# Set environment variables
+epicsEnvSet("IOC_NAME"  ,"SIOC:SYS0:SC01")
+epicsEnvSet("LOCATION"  ,"lcls-daemon1")
+epicsEnvSet("ENGINEER"  ,"Garth Brown")
 
-#- Support for general purpose oscilloscopes
+# Load common startup script
+< ../common/st.cmd.soft
 
-< envPaths
+# Initalize hardware
+epicsEnvSet("NODE_NAME" ,"scop-li10-nw01")
+< iocBoot/common/init_asyn.cmd
+epicsEnvSet("NODE_NAME" ,"scop-lr10-ls01")
+< iocBoot/common/init_asyn.cmd
+epicsEnvSet("NODE_NAME" ,"scop-lr10-ls02")
+< iocBoot/common/init_asyn.cmd
+epicsEnvSet("NODE_NAME" ,"scop-mcc0-sc01")
+< iocBoot/common/init_asyn.cmd
+epicsEnvSet("NODE_NAME" ,"scop-mcc0-sc03")
+< iocBoot/common/init_asyn.cmd
 
-epicsEnvSet("IOC_NAME", "SIOC:SYS0:SC01")
+# Load record instances
+dbLoadRecords("db/${IOC}.db")
 
-< ../common/generalInit.cmd
-pwd()
+# Setup autosave/restore
+< iocBoot/common/autoSaveConf.cmd
 
-epicsEnvSet("NODE_NAME", "scop-li10-nw01")
-epicsEnvSet("P", "SCOP:LI10:NW01")
-< iocBoot/common/tds.cmd
+# Start EPICS
+iocInit()
 
-epicsEnvSet("NODE_NAME", "scop-lr20-ls01")
-epicsEnvSet("P", "SCOP:LR20:LS01")
-< iocBoot/common/tds.cmd
+# Turn on caPutLogging:
+# Log values only on change to the iocLogServer:
+caPutLogInit("${EPICS_CA_PUT_LOG_ADDR}")
+caPutLogShow(2)
 
-epicsEnvSet("NODE_NAME", "scop-lr20-ls02")
-epicsEnvSet("P", "SCOP:LR20:LS02")
-< iocBoot/common/tds.cmd
-
-epicsEnvSet("NODE_NAME", "scop-mcc0-sc01")
-epicsEnvSet("P", "SCOP:MCC0:SC01")
-< iocBoot/common/tds.cmd
-
-epicsEnvSet("NODE_NAME", "scop-mcc0-sc03")
-epicsEnvSet("P", "SCOP:MCC0:SC03")
-< iocBoot/common/tds.cmd
-
-epicsEnvSet("NODE_NAME", "scop-und1-blf1")
-epicsEnvSet("P", "SCOP:UND1:BLF1")
-< iocBoot/common/tds.cmd
-
-epicsEnvSet("NODE_NAME", "scop-und1-sc01")
-epicsEnvSet("P", "SCOP:UND1:SC01")
-< iocBoot/common/tds.cmd
-
-epicsEnvSet("NODE_NAME", "scop-und1-sc02")
-epicsEnvSet("P", "SCOP:UND1:SC02")
-< iocBoot/common/tds.cmd
-
-iocInit
-
+# Start autosave routines to save our data
 < iocBoot/common/autoSaveRun.cmd
+
+# End of file
