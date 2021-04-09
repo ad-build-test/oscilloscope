@@ -2,8 +2,8 @@
 
 file archive_iocAdmin.archive
 {
-pattern { IOC            }
-		{ SIOC:LGUN:LS02 }
+pattern { IOC             }
+	{ SIOC:LGUNB:SC01 }
 }
 
 # End of file
