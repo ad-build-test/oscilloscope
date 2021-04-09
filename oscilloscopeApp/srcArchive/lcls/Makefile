@@ -4,12 +4,12 @@
 #
 #  Facility: LCLS Oscilloscope Controls
 #
-#  Auth: 06-Mar-2019, Kristi Luchini  (USERNAME)
+#  Auth: 06-Mar-2019, Kristi Luchini  (LUCHINI)
 #  Rev:  dd-mmm-yyyy, Reviewers Name  (USERNAME)
 #--------------------------------------------------------------
 #  Mod:
-#        dd-mmm-yyyy, First Lastname  (USERNAME):
-#          comment
+#        09-Apr-2021, K. Luchini      (LUCHINI):
+#         install sioc-sys0-sc01.archive
 #
 #============================================================== 
 #
@@ -20,6 +20,7 @@ include $(TOP)/configure/CONFIG
 #
 # Install archive list into $TOP/archive
 ARCHIVE += sioc-lgun-sc01.archive
+ARCHIVE += sioc-sys0-sc01.archive
 
 include $(TOP)/configure/RULES
 #----------------------------------------
