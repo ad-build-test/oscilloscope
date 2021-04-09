@@ -1,0 +1,20 @@
+# FACET-II Scope Archive PV list
+
+file archive_iocAdmin.archive
+{
+pattern { IOC            }
+	{ SIOC:SYS1:SC01 }
+}
+# End of file
+
+
+
+
+
+
+
+
+
+
+
+
