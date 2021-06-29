@@ -8,6 +8,11 @@ os	#==============================================================
 #
 #==============================================================
 #
+
+R1.0.6        G. Brown (gwbrown):
+28-Jun-2021   FACET: Revive scop-li20-ex01. Fix inconsistencies in names,
+              refactored so it's easy to stay consistent.
+
 R1.0.5        K. Luchini (luchini):
 09-Apr-2021   TestFac: chg iocBoot/sioc-sys6-nw01 to sioc-sys6-sc01
 

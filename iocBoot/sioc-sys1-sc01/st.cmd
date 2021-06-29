@@ -31,16 +31,12 @@ epicsEnvSet("ENGINEER" ,"Garth Brown")
 # Load common startup script
 < ../common/st.cmd.soft
 
-# Initalize hardware
-epicsEnvSet("NODE_NAME","scop-in10-fc01")
-< iocBoot/common/init_asyn.cmd
-epicsEnvSet("NODE_NAME","scop-in10-fc02")
-< iocBoot/common/init_asyn.cmd
-epicsEnvSet("NODE_NAME","scop-mcc0-fc02")
-< iocBoot/common/init_asyn.cmd
 
-# Load record instances
-dbLoadRecords("db/${IOC}.db")
+# Initalize hardware
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-li20-ex01,P=SCOP:LI20:EX01")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-in10-fc01,P=SCOP:IN10:FC01")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-in10-fc02,P=SCOP:IN10:FC02")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-mcc0-fc02,P=SCOP:mcc0:fc02")
 
 # Setup autosave/restore
 < iocBoot/common/autoSaveConf.cmd
