@@ -34,6 +34,7 @@ epicsEnvSet("ENGINEER" ,"Garth Brown")
 
 # Initalize hardware
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-li20-ex01,P=SCOP:LI20:EX01")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-li20-ex02,P=SCOP:LI20:EX02")
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-in10-fc01,P=SCOP:IN10:FC01")
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-in10-fc02,P=SCOP:IN10:FC02")
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-mcc0-sc02,P=SCOP:MCC0:SC02")

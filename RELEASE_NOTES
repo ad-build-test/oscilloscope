@@ -9,6 +9,9 @@ os	#==============================================================
 #==============================================================
 #
 
+R1.0.7        G. Brown (gwbrown):
+25-Oct-2021   FACET: Revive scop-li20-ex02.
+
 R1.0.6        G. Brown (gwbrown):
 28-Jun-2021   FACET: Revive scop-li20-ex01. Fix inconsistencies in names,
               refactored so it's easy to stay consistent.
