@@ -9,6 +9,9 @@ os	#==============================================================
 #==============================================================
 #
 
+R1.0.8        G. Brown (gwbrown):
+14-Jan-2022   LCLS: Add Beam Offset Monitor scope scop-amrf-rf01
+
 R1.0.7        G. Brown (gwbrown):
 25-Oct-2021   FACET: Revive scop-li20-ex02.
 
