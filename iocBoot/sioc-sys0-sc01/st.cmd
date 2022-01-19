@@ -49,6 +49,7 @@ epicsEnvSet("NODE_NAME" ,"scop-mcc0-sc03")
 dbLoadRecords("db/${IOC}.db")
 
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-amrf-rf01,P=SCOP:AMRF:RF01")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-amrf-rf02,P=SCOP:AMRF:RF02")
 
 # Setup autosave/restore
 < iocBoot/common/autoSaveConf.cmd
