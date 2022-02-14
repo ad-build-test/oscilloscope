@@ -9,6 +9,9 @@ os	#==============================================================
 #==============================================================
 #
 
+R1.0.9        G. Brown (gwbrown):
+14-Feb-2022   LCLS: Add Beam Offset Monitor scope scop-amrf-rf03. Update modules. Correct subsystem.
+
 R1.0.8        G. Brown (gwbrown):
 14-Jan-2022   LCLS: Add Beam Offset Monitor scope scop-amrf-rf01
 

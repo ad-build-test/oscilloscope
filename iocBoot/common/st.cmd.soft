@@ -28,7 +28,7 @@
 #  Mod:
 #        08-Apr-2021, K. Luchini      (LUCHINI):
 #          combine generalInit.cmd snf iocAdmin.cmd
-#          add SUBSYS env var for iocLogInit 
+#          add SUBSYS env var for iocLogInit
 #          copy archive files from app to IOC_DATA/<ioc>/archive
 #
 #==============================================================
@@ -42,7 +42,7 @@ epicsEnvSet("STARTUP"  ,"${EPICS_IOCS}/${IOC}")
 epicsEnvSet("ST_CMD"   ,"startup.cmd")
 
 # iocAdmin environment variables
-epicsEnvSet("SUBSYS","vac")
+epicsEnvSet("SUBSYS","gadc")
 
 # required for streamdevice
 epicsEnvSet("STREAM_PROTOCOL_PATH", "$(TOP)/db")
@@ -55,7 +55,7 @@ cd ${TOP}
 #==============================================================
 # Initialize EPICS errlog message queue size.  This needs to be
 # done before any dbLoad calls are made. Note the default is
-# 1260 bytes - too many messages are being discarded making it 
+# 1260 bytes - too many messages are being discarded making it
 # hard to debug.
 errlogInit(5000)
 
