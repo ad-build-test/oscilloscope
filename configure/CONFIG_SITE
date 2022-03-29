@@ -34,7 +34,7 @@ CROSS_COMPILER_TARGET_ARCHS =
 # Let's install our IOC boot products:
 # envPaths and st.cmd
 # =======================================================
-IOCS_APPL_TOP  = $(INSTALL_LOCATION)
+#IOCS_APPL_TOP  = $(INSTALL_LOCATION)
 
 INSTALL_LOCATION_STARTUP += $(INSTALL_LOCATION)/startup
 DIRECTORY_TARGETS += $(INSTALL_LOCATION_STARTUP)
