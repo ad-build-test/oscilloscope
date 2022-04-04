@@ -9,6 +9,11 @@ os	#==============================================================
 #==============================================================
 #
 
+R1.0.11       M. Dunning (mdunning):
+04-Apr-2022   All: Upgrade to scope-asyn R1.4.0
+                   Make scope reboot optional in tds.cmd.  DPO2x scope doesn't seem to need this.
+              Dev: Add IOCs for b15 and b34.
+
 R1.0.10       G. Brown (gwbrown):
 7-Mar-2022    FACET: Add IN10 laser room scope
 
