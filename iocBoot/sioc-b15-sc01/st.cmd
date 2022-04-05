@@ -19,7 +19,7 @@ epicsEnvSet("ENGINEER"  ,"Mike Dunning")
 < ../common/st.cmd.soft
 
 # Start driver & load databases
-iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "P=SCOP:B15:NW01,NODE_NAME=scop-amrf-rf03-lclsdev,REBOOT="#"")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "P=SCOP:B15:SC01,NODE_NAME=scop-amrf-rf03-lclsdev,REBOOT="#"")
 
 
 # Setup autosave/restore
