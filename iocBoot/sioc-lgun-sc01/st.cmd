@@ -32,11 +32,7 @@ epicsEnvSet("NODE_NAME" ,"scop-lgun-ls02")
 # Load common startup script
 < ../common/st.cmd.soft
 
-# Initalize hardware
-< iocBoot/common/init_asyn.cmd
-
-# Load record instances
-dbLoadRecords("db/${IOC}.db")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lgun-rf02,P=SCOP:LGUN:RF02")
 
 # Setup autosave/restore
 < iocBoot/common/autoSaveConf.cmd
