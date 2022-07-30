@@ -27,11 +27,12 @@
 epicsEnvSet("IOC_NAME"  ,"SIOC:LGUN:SC01")
 epicsEnvSet("LOCATION"  ,"lcls-daemon1")
 epicsEnvSet("ENGINEER"  ,"Garth Brown")
-epicsEnvSet("NODE_NAME" ,"scop-lgun-ls02")
+# epicsEnvSet("NODE_NAME" ,"scop-lgun-ls02")
 
 # Load common startup script
 < ../common/st.cmd.soft
 
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lgun-ls01,P=SCOP:LGUN:LS01")
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lgun-ls02,P=SCOP:LGUN:LS02")
 
 # Setup autosave/restore
