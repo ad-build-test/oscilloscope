@@ -8,6 +8,8 @@ os	#==============================================================
 #
 #==============================================================
 #
+R1.0.12       S. Alverson (alverson):
+29-Jul-2022   LCLS: Add scop-lgun-ls01 to sioc-lgun-sc01
 
 R1.0.11       M. Dunning (mdunning):
 04-Apr-2022   All: Upgrade to scope-asyn R1.4.0
