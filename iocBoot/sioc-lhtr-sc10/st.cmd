@@ -17,27 +17,26 @@
 #  Rev:  dd-mmm-yyyy, Reviewer's Name (USERNAME)
 #--------------------------------------------------------------
 #  Mod:
-#        08-Apr-2020, K. Luchini      (LUCHINI):
-#         add standard header
-#         chg db loaded
+#        18-Jan-2023, S. Alverson      (alverson):
+#         Modified for use with Rigol scope
 #
 #==============================================================
 #
 # Set environment variables
 epicsEnvSet("IOC_NAME"  ,"SIOC:LHTR:SC10")
-epicsEnvSet("LOCATION"  ,"lcls-daemon1")
+epicsEnvSet("LOCATION"  ,"lcls-daemon0")
 epicsEnvSet("ENGINEER"  ,"Shawn Alverson")
 
 # Load common startup script
 < ../common/st.cmd.soft
 
 epicsEnvSet( EPICS_CA_MAX_ARRAY_BYTES,100000)
-epicsEnvSet( ETHER, "scop-lhtr-ls10")
-epicsEnvSet( "PORT","SCOP")
-epicsEnvSet( "UDPP","L0")
-epicsEnvSet( "LOC","CHA")
+# epicsEnvSet( ETHER, "scop-lhtr-ls10")
+# epicsEnvSet( "PORT","SCOP")
+# epicsEnvSet( "UDPP","L0")
+# epicsEnvSet( "LOC","CHA")
 
-iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lhtr-ls10,P=SCOP:LHTR:LS10")
+iocshLoad("$(TOP)/iocBoot/common/ds1.cmd", "NODE_NAME=scop-lhtr-ls10,P=SCOP:LHTR:LS10")
 
 # Setup autosave/restore
 < iocBoot/common/autoSaveConf.cmd
