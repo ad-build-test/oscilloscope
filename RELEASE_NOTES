@@ -8,6 +8,9 @@ os	#==============================================================
 #
 #==============================================================
 #
+R1.0.13       S. Alverson (alverson):
+18-Jan-2023   LCLS: Add scop-lhtr-ls10 to sioc-lhtr-sc10
+
 R1.0.12       S. Alverson (alverson):
 29-Jul-2022   LCLS: Add scop-lgun-ls01 to sioc-lgun-sc01
 
