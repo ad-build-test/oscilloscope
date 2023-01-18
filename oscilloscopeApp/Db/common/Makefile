@@ -16,6 +16,8 @@ DB += $(ASYN)/db/asynRecord.db
 # Scope databases
 DB += $(SCOPEASYN)/db/scope.db
 DB += $(SCOPEASYN)/db/tds.db
+DB += $(SCOPEASYN)/db/ds1.db
+DB += $(SCOPEASYN)/db/ds6.db
 
 DB += sc_common.db
 

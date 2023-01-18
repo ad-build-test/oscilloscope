@@ -67,6 +67,7 @@ oscilloscope_LIBS += $(CEXP_LIBS)
 oscilloscope_SYS_LIBS += $(CEXP_SYS_LIBS)
 
 oscilloscope_LIBS += tds3x
+oscilloscope_LIBS += ds1x
 oscilloscope_LIBS += scope
 oscilloscope_LIBS += asyn
 oscilloscope_LIBS += qsrv
