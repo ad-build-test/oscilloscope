@@ -8,6 +8,10 @@ os	#==============================================================
 #
 #==============================================================
 #
+R1.1.0        S. Alverson (alverson):
+              All: Added Rigol scope support, required separating out binaries per device type (tds, ds1, ds6)
+                   C code support should be cleaned up so that this is not necessary
+
 R1.0.13       S. Alverson (alverson):
 18-Jan-2023   LCLS: Add scop-lhtr-ls10 to sioc-lhtr-sc10
 
