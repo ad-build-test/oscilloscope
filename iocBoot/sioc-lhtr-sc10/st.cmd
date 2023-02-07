@@ -1,4 +1,4 @@
-#!../../bin/rhel6-x86_64/oscilloscope
+#!../../bin/rhel6-x86_64/rigolDS1
 #==============================================================
 #
 #  Abs:  Startup Script for the Laser GunB Scope
@@ -28,7 +28,7 @@ epicsEnvSet("LOCATION"  ,"lcls-daemon0")
 epicsEnvSet("ENGINEER"  ,"Shawn Alverson")
 
 # Load common startup script
-< ../common/st.cmd.soft
+< ../common/st.cmd.rigolds1
 
 epicsEnvSet( EPICS_CA_MAX_ARRAY_BYTES,100000)
 # epicsEnvSet( ETHER, "scop-lhtr-ls10")
@@ -45,11 +45,11 @@ iocshLoad("$(TOP)/iocBoot/common/ds1.cmd", "NODE_NAME=scop-lhtr-ls10,P=SCOP:LHTR
 iocInit()
 
 epicsThreadSleep(1)
-dbpf "$(LOC):$(PORT):BO:UPDATE.SCAN","0"
-dbpf "$(LOC):$(PORT):MBBO:TRACE:MODE",1
-dbpf $(LOC):$(PORT):BO:TIMDLY:STATE 1
-dbpf $(LOC):$(PORT):BO:RD:TRACE 1
-# dbpf $(LOC):$(PORT):WF:SAV:PATH "/u1/lcls/physics/Oscilloscope/${IOC}"
+dbpf "SCOP:LHTR:LS10:BO_UPDATE.SCAN","0"
+dbpf "SCOP:LHTR:LS10:MBBO_TRACE_MODE",1
+dbpf SCOP:LHTR:LS10:BO_TIMDLY_STATE 1
+dbpf SCOP:LHTR:LS10:BO_RD_TRACE 1
+# dbpf SCOP:LHTR:LS10:WF_SAV_PATH "/u1/lcls/physics/Oscilloscope/${IOC}"
 
 # Turn on caPutLogging:
 # Log values only on change to the iocLogServer:
