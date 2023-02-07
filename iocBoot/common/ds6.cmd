@@ -1,8 +1,8 @@
 #==============================================================
 #
-#  Abs:  Common Rigol DS1x series startup script for soft IOCs
+#  Abs:  Common Rigol DS6x series startup script for soft IOCs
 #
-#  Name: ds1.cmd
+#  Name: ds6.cmd
 #
 #  Rem:  Upon entry we expect to be at location TOP
 #        and the following macros must be defined.
@@ -38,7 +38,7 @@ dbLoadRecords("db/asynRecord.db","P=$(P):,R=ASYN_DS1,PORT=$(PORT),ADDR=0,IMAX=0,
 
 #dbLoadRecords( "db/scope.db","P=$(LOC):$(PORT),L=0,A=9,NAME=Rigol,PORT=$(PORT)")
 dbLoadRecords("db/scope.db","P=$(P),NAME=Rigol,PORT=$(PORT)")
-dbLoadRecords("db/ds1.db","P=$(P),PORT=$(PORT)")
+dbLoadRecords("db/ds6.db","P=$(P),PORT=$(PORT)")
 
 # End of script
 

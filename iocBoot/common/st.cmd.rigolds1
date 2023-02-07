@@ -1,0 +1,91 @@
+#==============================================================
+#
+#  Abs:  Common Soft IOC startup script
+#
+#  Name: st.cmd.soft
+#
+#  Side:  This script expectes the following
+#         environment variables tobe defined upon entry
+#           IOC_NAME   - IOC Device name,           (ie. SIOC:LGUN:SC01)
+#           ENGINEER   - IOC Engineer               (ie. Garth Brown)
+#           LOCATION   - Server ioc runs on         (ie. lcls-srv01)
+#
+#         Some of the above macros are defined by the script
+#         envPaths, which is generated during the build and
+#         saved at: iocBoot/<nodename>
+#
+#         Upon exit, this script will leave the ioc sitting
+#         at the application TOP directory when the following
+#         is defined in the Makefile:
+#
+#        TARGET = envPaths
+#
+#  Facility: EED Oscilliscope Controls
+#
+#  Auth: 29-Apr-2020, Garth Brown     (GBROWN):
+#  Rev:  dd-mmm-yyyy, Reviewer's Name (USERNAME)
+#--------------------------------------------------------------
+#  Mod:
+#        08-Apr-2021, K. Luchini      (LUCHINI):
+#          combine generalInit.cmd snf iocAdmin.cmd
+#          add SUBSYS env var for iocLogInit
+#          copy archive files from app to IOC_DATA/<ioc>/archive
+#
+#==============================================================
+#
+# Set environment variables
+< envPaths
+
+# iocAdmin environment variables
+epicsEnvSet("IOC_BOOT" ,"${EPICS_IOC_APP}")
+epicsEnvSet("STARTUP"  ,"${EPICS_IOCS}/${IOC}")
+epicsEnvSet("ST_CMD"   ,"startup.cmd")
+
+# iocAdmin environment variables
+epicsEnvSet("SUBSYS","gadc")
+
+# required for streamdevice
+epicsEnvSet("STREAM_PROTOCOL_PATH", "$(TOP)/db")
+
+# Change to the top of the app
+cd ${TOP}
+
+#==============================================================
+# Load standard database
+#==============================================================
+# Initialize EPICS errlog message queue size.  This needs to be
+# done before any dbLoad calls are made. Note the default is
+# 1260 bytes - too many messages are being discarded making it
+# hard to debug.
+errlogInit(5000)
+
+# Load the database definitions file
+dbLoadDatabase("dbd/rigolDS1.dbd")
+rigolDS1_registerRecordDeviceDriver(pdbbase)
+
+# Load iocAdmin databases to support IOC Health and monitoring
+dbLoadRecords("db/iocAdminSoft.db","IOC=${IOC_NAME}")
+
+# The following database is a result of a python parser
+# which looks at RELEASE_SITE and RELEASE to discover
+# versions of software your IOC is referencing
+# The python parser is part of iocAdmin
+dbLoadRecords("db/iocRelease.db" ,"IOC=${IOC_NAME}")
+
+#==============================================================
+# Update archive pv list in the data area
+#==============================================================
+system("cp archive/${IOC}.archive  ${IOC_DATA}/${IOC}/archive/.")
+
+#==============================================================
+#  Load Channe Access Security if configuration file exists
+#==============================================================
+< ${ACF_INIT}
+
+#==============================================================
+# Start IOC Log Client
+#==============================================================
+< ${LOG_INIT}
+
+# End of script
+
