@@ -8,6 +8,10 @@ os	#==============================================================
 #
 #==============================================================
 #
+R1.1.1        07-Feb-2023, K. Luchini  (luchini):
+              COMMON: remove unused variables from CONFIG_STE
+              LINUX_KERNEL_MODULES and LINUXRT_BUILDROOT_VERSION=
+
 R1.1.0        S. Alverson (alverson):
               All: Added Rigol scope support, required separating out binaries per device type (tds, ds1, ds6)
                    C code support should be cleaned up so that this is not necessary
