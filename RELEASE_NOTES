@@ -8,6 +8,9 @@ os	#==============================================================
 #
 #==============================================================
 #
+R1.1.2        15-May-2023, S. Alverson (alverson):
+              LCLS: Adding scop-lgun-ls03 in S0 Laser Room (sioc-lgun-sc01)
+
 R1.1.1        07-Feb-2023, K. Luchini  (luchini):
               COMMON: remove unused variables from CONFIG_STE
               LINUX_KERNEL_MODULES and LINUXRT_BUILDROOT_VERSION=
