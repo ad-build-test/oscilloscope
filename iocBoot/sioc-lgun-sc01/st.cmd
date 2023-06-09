@@ -34,6 +34,7 @@ epicsEnvSet("ENGINEER"  ,"Garth Brown")
 
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lgun-ls01,P=SCOP:LGUN:LS01")
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lgun-ls02,P=SCOP:LGUN:LS02")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lgun-ls03,P=SCOP:LGUN:LS03")
 
 # Setup autosave/restore
 < iocBoot/common/autoSaveConf.cmd
