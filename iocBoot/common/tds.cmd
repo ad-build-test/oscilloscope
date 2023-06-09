@@ -35,11 +35,15 @@ $(REBOOT="")epicsThreadSleep(50)
 
 vxi11Configure("$(UDPP)","$(NODE_NAME)",0,0.0,"inst0",0,0)
 dbLoadRecords("db/asynRecord.db","P=$(P),R=ASYN_VXI11,PORT=$(UDPP),ADDR=0,IMAX=0,OMAX=0")
+
 drvTDSConfigure("$(PORT)","$(UDPP)")
 dbLoadRecords("db/asynRecord.db","P=$(P),R=ASYN_TDS,PORT=$(PORT),ADDR=0,IMAX=0,OMAX=0")
 
-#asynSetTraceMask("L0",-1,0x0f)
-#asynSetTraceIOMask("L0",-1,0x6)
+#asynSetTraceMask("$(UDPP)", -1, 0x11)
+asynSetTraceIOMask("$(UDPP)", -1, 0x1)
+
+#asynSetTraceMask("$(PORT)", -1, 0x11)
+asynSetTraceIOMask("$(PORT)", -1, 0x1)
 
 dbLoadRecords("db/scope.db", "P=$(P),NAME=TDS,PORT=$(PORT)")
 dbLoadRecords("db/tds.db", "P=$(P),PORT=$(PORT)")
