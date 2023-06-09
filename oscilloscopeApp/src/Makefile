@@ -7,89 +7,71 @@ include $(TOP)/configure/CONFIG
 
 #=============================
 # Build the IOC application
+PROD_NAME = oscilloscope
+PROD_IOC = $(PROD_NAME)
 
-PROD_IOC = oscilloscope rigolDS1 rigolDS6
-# oscilloscope.dbd will be created and installed (make separate dbd for Rigol scopes for now)
-DBD += oscilloscope.dbd rigolDS1.dbd rigolDS6.dbd
+# $(PROD_NAME).dbd will be created and installed
+DBD += $(PROD_NAME).dbd
 
-# oscilloscope.dbd will be made up from these files:
-scope_DBD += base.dbd
+# $(PROD_NAME).dbd will be made up from these files:
+$(PROD_NAME)_DBD += base.dbd
 
 ifneq ($(IOCADMIN),)
-scope_DBD += devIocStats.dbd
+$(PROD_NAME)_DBD += devIocStats.dbd
 endif
 ifneq ($(AUTOSAVE),)
-scope_DBD += asSupport.dbd
+$(PROD_NAME)_DBD += asSupport.dbd
 endif
 ifneq ($(CAPUTLOG),)
-scope_DBD += caPutLog.dbd
+$(PROD_NAME)_DBD += caPutLog.dbd
 endif
-scope_DBD += $(CEXP_DBDS)
 
-# ================================================================================
-# The system command will be mainly used by linux hosted IOCs
-# Very useful for changing kernel thread priorities for kernel drivers
-# ================================================================================
-scope_DBD += system.dbd
+$(PROD_NAME)_DBD += asyn.dbd
+$(PROD_NAME)_DBD += drvAsynIPPort.dbd
+$(PROD_NAME)_DBD += drvVxi11.dbd
+$(PROD_NAME)_DBD += drvTDS.dbd
+$(PROD_NAME)_DBD += drvMDO.dbd
+$(PROD_NAME)_DBD += drvDS1x.dbd
+$(PROD_NAME)_DBD += drvDS6x.dbd
+$(PROD_NAME)_DBD += system.dbd
 
-scope_DBD += drvAsynIPPort.dbd
-scope_DBD += drvVxi11.dbd
-scope_DBD += asyn.dbd
-scope_DBD += PVAServerRegister.dbd
-scope_DBD += qsrv.dbd
+ifdef EPICS_QSRV_MAJOR_VERSION
+$(PROD_NAME)_DBD += PVAServerRegister.dbd
+$(PROD_NAME)_DBD += qsrv.dbd
+endif
 
-# oscilloscope.dbd will be created and installed
-oscilloscope_DBD += $(scope_DBD) drvTDS.dbd
-rigolDS1_DBD += $(scope_DBD) drvDS1x.dbd
-rigolDS6_DBD += $(scope_DBD) drvDS6x.dbd
 
-oscilloscope_SRCS += oscilloscope_registerRecordDeviceDriver.cpp
-rigolDS1_SRCS += rigolDS1_registerRecordDeviceDriver.cpp
-rigolDS6_SRCS += rigolDS6_registerRecordDeviceDriver.cpp
+$(PROD_NAME)_SRCS += $(PROD_NAME)_registerRecordDeviceDriver.cpp
+$(PROD_NAME)_SRCS_DEFAULT += $(PROD_NAME)Main.cpp
 
-# Build the main IOC entry point on workstation OSs.
-#oscilloscope_SRCS_DEFAULT += oscilloscopeMain.cpp
-#oscilloscope_SRCS_vxWorks += -nil-
-USR_SRCS_DEFAULT += oscilloscopeMain.cpp
-USR_SRCS_vxWorks += -nil-
-
-# Add support from base/src/vxWorks if needed
-#oscilloscope_OBJS_vxWorks += $(EPICS_BASE_BIN)/vxComLibrary
 
 ifneq ($(IOCADMIN),)
-scope_LIBS += devIocStats
+$(PROD_NAME)_LIBS += devIocStats
 endif
 
 # Needed to link in autosave support
 ifneq ($(AUTOSAVE),)
-scope_LIBS += autosave
+$(PROD_NAME)_LIBS += autosave
 endif
 
 # Needed to link caPutLog support
 ifneq ($(CAPUTLOG),)
-scope_LIBS += caPutLog
+$(PROD_NAME)_LIBS += caPutLog
 endif
 
-# Needed to link cexpsh() support
-#scope_LIBS += $(CEXP_LIBS)
-#scope_SYS_LIBS += $(CEXP_SYS_LIBS)
+$(PROD_NAME)_LIBS += tds3x
+$(PROD_NAME)_LIBS += mdo3x
+$(PROD_NAME)_LIBS += ds1x
+$(PROD_NAME)_LIBS += ds6x
+$(PROD_NAME)_LIBS += asyn
 
-scope_LIBS += scope
-scope_LIBS += asyn
-scope_LIBS += qsrv
+ifdef EPICS_QSRV_MAJOR_VERSION
+$(PROD_NAME)_LIBS += qsrv
+$(PROD_NAME)_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
+endif
+
 # Finally link to the EPICS Base libraries
-#scope_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
-#scope_LIBS += $(EPICS_BASE_IOC_LIBS)
-
-oscilloscope_LIBS += $(CEXP_LIBS) tds3x $(scope_LIBS)
-rigolDS1_LIBS += $(CEXP_LIBS) ds1x $(scope_LIBS)
-rigolDS6_LIBS += $(CEXP_LIBS) ds6x $(scope_LIBS)
-
-#USR_LIBS_RTEMS     += $(CEXP_LIBS)
-#USR_SYS_LIBS_RTEMS += $(CEXP_SYS_LIBS)
-USR_LIBS           += $(EPICS_BASE_IOC_LIBS)
-USR_LIBS           += $(EPICS_BASE_PVA_CORE_LIBS)
-
+$(PROD_NAME)_LIBS += $(EPICS_BASE_IOC_LIBS)
 #===========================
 
 include $(TOP)/configure/RULES

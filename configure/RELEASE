@@ -1,43 +1,16 @@
 -include $(TOP)/RELEASE_SITE
 # RELEASE - Location of external support modules
 #
-# IF YOU MAKE ANY CHANGES to this file you must subsequently
-# do a "gnumake rebuild" in this application's top level
-# directory.
-#
-# The build process does not check dependencies against files
-# that are outside this application, thus you should do a
-# "gnumake rebuild" in the top level directory after EPICS_BASE
-# or any other external module pointed to below is rebuilt.
-#
 # Host- or target-specific settings can be given in files named
 #  RELEASE.$(EPICS_HOST_ARCH).Common
 #  RELEASE.Common.$(T_A)
 #  RELEASE.$(EPICS_HOST_ARCH).$(T_A)
-#
-# This file is parsed by both GNUmake and an EPICS Perl script,
-# so it can ONLY contain definititions of paths to other support
-# modules, variable definitions that are used in module paths,
-# and include statements that pull in other RELEASE files.
-# Variables may be used before their values have been set.
-# Build variables that are NOT used in paths should be set in
-# the CONFIG_SITE file.
-
-# Variables and paths to dependent modules:
-#MODULES = /path/to/modules
-#MYMODULE = $(MODULES)/my-module
 
 ASYN_MODULE_VERSION=R4.39-1.0.1
 AUTOSAVE_MODULE_VERSION=R5.10-1.0.0
 CAPUTLOG_MODULE_VERSION=R3.7-1.0.0
 IOCADMIN_MODULE_VERSION=R3.1.16-1.3.0
-SCOPE_ASYN_MODULE_VERSION=R1.4.0
-
-# Let's add in support for the cexpsh()
-# This can be called from the EPICS shell
-# Please look at the README file in
-# CEXP module
-CEXP_MODULE_VERSION=R1.1.2
+SCOPE_ASYN_MODULE_VERSION=R1.5.0
 
 # ============================================================
 #  Module Location
@@ -48,11 +21,6 @@ AUTOSAVE=$(EPICS_MODULES)/autosave/$(AUTOSAVE_MODULE_VERSION)
 CAPUTLOG=$(EPICS_MODULES)/caPutLog/$(CAPUTLOG_MODULE_VERSION)
 IOCADMIN=$(EPICS_MODULES)/iocAdmin/$(IOCADMIN_MODULE_VERSION)
 SCOPEASYN=$(EPICS_MODULES)/scope-asyn/$(SCOPE_ASYN_MODULE_VERSION)
-
-CEXP=$(EPICS_MODULES)/cexpsh/$(CEXP_MODULE_VERSION)
-
-# If using the sequencer, point SNCSEQ at its top directory:
-#SNCSEQ = $(MODULES)/seq-ver
 
 # EPICS_BASE should appear last so earlier modules can override stuff:
 # =====================================================================
