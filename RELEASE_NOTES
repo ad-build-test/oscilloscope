@@ -1,4 +1,4 @@
-os	#==============================================================
+#==============================================================
 #
 #  Name: RELEASE_NOTES
 #
@@ -7,59 +7,65 @@ os	#==============================================================
 #        scope-asyn module based on Zen's general scope support.
 #
 #==============================================================
-#
-R1.1.1        07-Feb-2023, K. Luchini  (luchini):
-              COMMON: remove unused variables from CONFIG_STE
-              LINUX_KERNEL_MODULES and LINUXRT_BUILDROOT_VERSION=
 
-R1.1.0        S. Alverson (alverson):
-              All: Added Rigol scope support, required separating out binaries per device type (tds, ds1, ds6)
-                   C code support should be cleaned up so that this is not necessary
+R1.2.0      08-Jun-2023  M. Dunning (mdunning)
+            All: Upgrade to scope-asyn R1.5.0
+                 Add support for MDO34 scope; add dev IOC sioc-b34-sc02
+                 Merge binaries; scope module is fixed
+                 Clean up src/Makefile
 
-R1.0.13       S. Alverson (alverson):
-18-Jan-2023   LCLS: Add scop-lhtr-ls10 to sioc-lhtr-sc10
+R1.1.1      07-Feb-2023, K. Luchini  (luchini):
+            COMMON: remove unused variables from CONFIG_STE
+            LINUX_KERNEL_MODULES and LINUXRT_BUILDROOT_VERSION=
 
-R1.0.12       S. Alverson (alverson):
-29-Jul-2022   LCLS: Add scop-lgun-ls01 to sioc-lgun-sc01
+R1.1.0      S. Alverson (alverson):
+            All: Added Rigol scope support, required separating out binaries per device type (tds, ds1, ds6)
+                 C code support should be cleaned up so that this is not necessary
 
-R1.0.11       M. Dunning (mdunning):
-04-Apr-2022   All: Upgrade to scope-asyn R1.4.0
-                   Make scope reboot optional in tds.cmd.  DPO2x scope doesn't seem to need this.
-              Dev: Add IOCs for b15 and b34.
+R1.0.13      S. Alverson (alverson):
+18-Jan-2023  LCLS: Add scop-lhtr-ls10 to sioc-lhtr-sc10
 
-R1.0.10       G. Brown (gwbrown):
-7-Mar-2022    FACET: Add IN10 laser room scope
+R1.0.12      S. Alverson (alverson):
+29-Jul-2022  LCLS: Add scop-lgun-ls01 to sioc-lgun-sc01
 
-R1.0.9        G. Brown (gwbrown):
-14-Feb-2022   LCLS: Add Beam Offset Monitor scope scop-amrf-rf03. Update modules. Correct subsystem.
+R1.0.11      M. Dunning (mdunning):
+04-Apr-2022  All: Upgrade to scope-asyn R1.4.0
+                  Make scope reboot optional in tds.cmd.  DPO2x scope doesn't seem to need this.
+             Dev: Add IOCs for b15 and b34.
 
-R1.0.8        G. Brown (gwbrown):
-14-Jan-2022   LCLS: Add Beam Offset Monitor scope scop-amrf-rf01
+R1.0.10      G. Brown (gwbrown):
+7-Mar-2022   FACET: Add IN10 laser room scope
 
-R1.0.7        G. Brown (gwbrown):
-25-Oct-2021   FACET: Revive scop-li20-ex02.
+R1.0.9       G. Brown (gwbrown):
+14-Feb-2022  LCLS: Add Beam Offset Monitor scope scop-amrf-rf03. Update modules. Correct subsystem.
 
-R1.0.6        G. Brown (gwbrown):
-28-Jun-2021   FACET: Revive scop-li20-ex01. Fix inconsistencies in names,
-              refactored so it's easy to stay consistent.
+R1.0.8       G. Brown (gwbrown):
+14-Jan-2022  LCLS: Add Beam Offset Monitor scope scop-amrf-rf01
 
-R1.0.5        K. Luchini (luchini):
-09-Apr-2021   TestFac: chg iocBoot/sioc-sys6-nw01 to sioc-sys6-sc01
+R1.0.7       G. Brown (gwbrown):
+25-Oct-2021  FACET: Revive scop-li20-ex02.
 
-R1.0.4        K. Luchini (luchini):
-08-Apr-2021   TestFac: merge tds-asyn-lcls iocs for xta into
-              into sioc-sys6-sc01. decommisoine the tds-asyn-lcls
-              asta iocs sioc-as01-ls01 and sioc-as01-ls01 but keep
-              IPs for pcds use for asta
+R1.0.6       G. Brown (gwbrown):
+28-Jun-2021  FACET: Revive scop-li20-ex01. Fix inconsistencies in names,
+             refactored so it's easy to stay consistent.
 
-R1.0.3        G. Brown (gwbrown):
-12-Nov-2020   FACET: Add second Faraday cup scope scop-in10-fc02
+R1.0.5       K. Luchini (luchini):
+09-Apr-2021  TestFac: chg iocBoot/sioc-sys6-nw01 to sioc-sys6-sc01
 
-R1.0.2        G. Brown (gwbrown):
-29-Apr-2020   Added the LCLS scopes to sioc-sys0-sc01
-              Added the FACET scopes to sioc-sys1-sc01
+R1.0.4       K. Luchini (luchini):
+08-Apr-2021  TestFac: merge tds-asyn-lcls iocs for xta into
+             into sioc-sys6-sc01. decommisoine the tds-asyn-lcls
+             asta iocs sioc-as01-ls01 and sioc-as01-ls01 but keep
+             IPs for pcds use for asta
 
-R1.0.1        G. Brown (gwbrown):
-25-Feb-2020   Fixed IOC name macro in sioc-lgun-sc01
+R1.0.3       G. Brown (gwbrown):
+12-Nov-2020  FACET: Add second Faraday cup scope scop-in10-fc02
+
+R1.0.2       G. Brown (gwbrown):
+29-Apr-2020  Added the LCLS scopes to sioc-sys0-sc01
+             Added the FACET scopes to sioc-sys1-sc01
+
+R1.0.1       G. Brown (gwbrown):
+25-Feb-2020  Fixed IOC name macro in sioc-lgun-sc01
 
 
