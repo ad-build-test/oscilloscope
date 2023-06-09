@@ -1,4 +1,4 @@
-#!../../bin/rhel6-x86_64/rigolDS1
+#!../../bin/rhel6-x86_64/oscilloscope
 #==============================================================
 #
 #  Abs:  Startup Script for the Laser GunB Scope
