@@ -1,53 +1,29 @@
 #!../../bin/rhel7-x86_64/oscilloscope
 #==============================================================
 #
-#  Abs:  Startup Script for the Laser GunB Scope
+#  Abs:  Startup Script for LCLS Scopes
 #
 #  Name: st.cmd
 #
-#  Desc:  This is the EPICS startup script for a soft IOC
-#         that will control the vacuum system in
-#         the FACET-II injector, which is located at
-#         sector 10. This IOC will be using the
-#         facet facility computer control infrastructure.
+#  Facility:  LCLS Oscilloscope Controls
 #
-#  Facility:  LCLS Oscilliscope Controls
-#
-#  Auth: 29-Apr-2020, Garth Brown     (GBROWN):
-#  Rev:  dd-mmm-yyyy, Reviewer's Name (USERNAME)
-#--------------------------------------------------------------
-#  Mod:
-#        08-Apr-2020, K. Luchini      (LUCHINI):
-#         add standard header
-#         chg db loaded
-#         decommission scop-und1-sc01, sioc-und1-sc02
-#         and sioc-und1-blf1
-#
+#  Auth: 29-Apr-2020, Garth Brown     (GBROWN)
 #==============================================================
-#
+
 # Set environment variables
-epicsEnvSet("IOC_NAME"  ,"SIOC:SYS0:SC01")
-epicsEnvSet("LOCATION"  ,"lcls-daemon1")
-epicsEnvSet("ENGINEER"  ,"Garth Brown")
+epicsEnvSet("IOC_NAME", "SIOC:SYS0:SC01")
+epicsEnvSet("LOCATION", "lcls-daemon1")
+epicsEnvSet("ENGINEER", "Garth Brown")
 
 # Load common startup script
 < ../common/st.cmd.soft
 
 # Initalize hardware
-epicsEnvSet("NODE_NAME" ,"scop-li10-nw01")
-< iocBoot/common/init_asyn.cmd
-epicsEnvSet("NODE_NAME" ,"scop-lr10-ls01")
-< iocBoot/common/init_asyn.cmd
-epicsEnvSet("NODE_NAME" ,"scop-lr10-ls02")
-< iocBoot/common/init_asyn.cmd
-epicsEnvSet("NODE_NAME" ,"scop-mcc0-sc01")
-< iocBoot/common/init_asyn.cmd
-epicsEnvSet("NODE_NAME" ,"scop-mcc0-sc03")
-< iocBoot/common/init_asyn.cmd
-
-# Load record instances
-dbLoadRecords("db/${IOC}.db")
-
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-li10-nw01,P=SCOP:LI10:NW01")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lr20-ls01,P=SCOP:LR20:LS01")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lr20-ls02,P=SCOP:LR20:LS02")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-mcc0-sc01,P=SCOP:MCC0:SC01")
+iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-mcc0-sc03,P=SCOP:MCC0:SC03")
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-amrf-rf01,P=SCOP:AMRF:RF01")
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-amrf-rf03,P=SCOP:AMRF:RF03,REBOOT="#"")
 
