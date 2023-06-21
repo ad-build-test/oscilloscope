@@ -5,7 +5,6 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
-DB += sioc-sys1-sc01.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------

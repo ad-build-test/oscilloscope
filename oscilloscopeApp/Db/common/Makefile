@@ -11,16 +11,14 @@ IOCRELEASE_DB += iocRelease.db
 DB_INSTALLS += $(AUTOSAVE)/db/save_restoreStatus.db
 
 # Asyn serial devices
-DB += $(ASYN)/db/asynRecord.db
+DB_INSTALLS += $(ASYN)/db/asynRecord.db
 
 # Scope databases
-DB += $(SCOPEASYN)/db/scope.db
-DB += $(SCOPEASYN)/db/tds.db
-DB += $(SCOPEASYN)/db/mdo.db
-DB += $(SCOPEASYN)/db/ds1.db
-DB += $(SCOPEASYN)/db/ds6.db
-
-DB += sc_common.db
+DB_INSTALLS += $(SCOPEASYN)/db/scope.db
+DB_INSTALLS += $(SCOPEASYN)/db/tds.db
+DB_INSTALLS += $(SCOPEASYN)/db/mdo.db
+DB_INSTALLS += $(SCOPEASYN)/db/ds1.db
+DB_INSTALLS += $(SCOPEASYN)/db/ds6.db
 
 include $(TOP)/configure/RULES
 #----------------------------------------
