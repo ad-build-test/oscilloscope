@@ -5,29 +5,15 @@
 #
 #  Name: st.cmd
 #
-#  Desc:  This is the EPICS startup script for a soft IOC
-#         that will control the vacuum system in
-#         the FACET-II injector, which is located at
-#         sector 10. This IOC will be using the
-#         facet facility computer control infrastructure.
-#
 #  Facility:  LCLS Oscilliscope Controls
 #
 #  Auth: 29-Apr-2020, Garth Brown     (GBROWN):
-#  Rev:  dd-mmm-yyyy, Reviewer's Name (USERNAME)
-#--------------------------------------------------------------
-#  Mod:
-#        08-Apr-2020, K. Luchini      (LUCHINI):
-#         add standard header
-#         chg db loaded
-#
 #==============================================================
-#
+
 # Set environment variables
 epicsEnvSet("IOC_NAME"  ,"SIOC:LGUN:SC01")
 epicsEnvSet("LOCATION"  ,"lcls-daemon1")
 epicsEnvSet("ENGINEER"  ,"Garth Brown")
-# epicsEnvSet("NODE_NAME" ,"scop-lgun-ls02")
 
 # Load common startup script
 < ../common/st.cmd.soft

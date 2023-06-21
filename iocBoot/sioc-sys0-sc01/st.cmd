@@ -25,6 +25,7 @@ iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lr20-ls02,P=SCOP:LR20
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-mcc0-sc01,P=SCOP:MCC0:SC01")
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-mcc0-sc03,P=SCOP:MCC0:SC03")
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-amrf-rf01,P=SCOP:AMRF:RF01")
+# scop-amrf-rf03 is a DPO2024, for which TDS3000Reboot is not supported.
 iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-amrf-rf03,P=SCOP:AMRF:RF03,REBOOT="#"")
 
 # Setup autosave/restore
