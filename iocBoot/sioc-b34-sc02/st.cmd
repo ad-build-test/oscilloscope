@@ -19,7 +19,7 @@ epicsEnvSet("ENGINEER"  ,"Mike Dunning")
 < ../common/st.cmd.soft
 
 # Start driver & load databases
-iocshLoad("$(TOP)/iocBoot/common/mdo.cmd", "P=SCOP:B34:SC272,NODE_NAME=192.168.1.68")
+iocshLoad("$(TOP)/iocBoot/common/mdo.cmd", "P=SCOP:B34:SC02,NODE_NAME=scop-b34-sc02")
 
 # Set up autosave/restore
 < $(TOP)/iocBoot/common/autoSaveConf.cmd
