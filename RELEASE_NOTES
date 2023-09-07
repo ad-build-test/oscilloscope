@@ -8,6 +8,9 @@
 #
 #==============================================================
 
+R1.2.2  20-Jun-2023  M. Dunning (mdunning)
+        LCLS: Move HOM scopes from sioc-sys0-sc01 to new IOC sioc-sys0-sc02; scopes are now Tek MDO34
+
 R1.2.1      20-Jun-2023  M. Dunning (mdunning)
             LCLS: Fix node names in sioc-sys0-sc01
             LCLS: Use rhel7 binary in startup script shebangs

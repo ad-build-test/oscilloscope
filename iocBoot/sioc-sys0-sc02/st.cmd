@@ -7,23 +7,20 @@
 #
 #  Facility:  LCLS Oscilloscope Controls
 #
-#  Auth: 29-Apr-2020, Garth Brown     (GBROWN)
+#  Auth: 06-Sep-2023, M. Dunning (mdunning)
 #==============================================================
 
 # Set environment variables
-epicsEnvSet("IOC_NAME", "SIOC:SYS0:SC01")
-epicsEnvSet("LOCATION", "lcls-daemon1")
+epicsEnvSet("IOC_NAME", "SIOC:SYS0:SC02")
+epicsEnvSet("LOCATION", "lcls-daemon0")
 epicsEnvSet("ENGINEER", "Garth Brown")
 
 # Load common startup script
 < ../common/st.cmd.soft
 
 # Initalize hardware
-iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-li10-nw01,P=SCOP:LI10:NW01")
-iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lr20-ls01,P=SCOP:LR20:LS01")
-iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-lr20-ls02,P=SCOP:LR20:LS02")
-iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-mcc0-sc01,P=SCOP:MCC0:SC01")
-iocshLoad("$(TOP)/iocBoot/common/tds.cmd", "NODE_NAME=scop-mcc0-sc03,P=SCOP:MCC0:SC03")
+iocshLoad("$(TOP)/iocBoot/common/mdo.cmd", "NODE_NAME=scop-amrf-rf01,P=SCOP:AMRF:RF01")
+iocshLoad("$(TOP)/iocBoot/common/mdo.cmd", "NODE_NAME=scop-amrf-rf03,P=SCOP:AMRF:RF03")
 
 # Setup autosave/restore
 < iocBoot/common/autoSaveConf.cmd
@@ -40,3 +37,4 @@ caPutLogShow(2)
 < iocBoot/common/autoSaveRun.cmd
 
 # End of file
+

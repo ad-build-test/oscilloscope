@@ -1,0 +1,10 @@
+# LCLS Scopes Archive List
+
+file archive_iocAdmin.archive
+{
+pattern { IOC            }
+        { SIOC:SYS0:SC02 }
+}
+
+# End of file
+
