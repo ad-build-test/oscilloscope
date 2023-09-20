@@ -12,7 +12,7 @@
 
 # Set environment variables
 epicsEnvSet("IOC_NAME", "SIOC:SYS0:SC02")
-epicsEnvSet("LOCATION", "lcls-daemon0")
+epicsEnvSet("LOCATION", "lcls-daemon1")
 epicsEnvSet("ENGINEER", "Garth Brown")
 
 # Load common startup script
