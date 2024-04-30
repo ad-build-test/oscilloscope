@@ -24,7 +24,11 @@ epicsEnvSet("ENGINEER"  ,"Shawn Alverson")
 # Load common startup script
 < ../common/st.cmd.soft
 
-iocshLoad("$(TOP)/iocBoot/common/ds1.cmd", "NODE_NAME=scop-lhtr-ls10,P=SCOP:LHTR:LS10")
+# Old Rigol scope
+#iocshLoad("$(TOP)/iocBoot/common/ds1.cmd", "NODE_NAME=scop-lhtr-ls10,P=SCOP:LHTR:LS10")
+
+# New Textronix MDO
+iocshLoad("$(TOP)/iocBoot/common/mdo.cmd", "P=SCOP:LHTR:LS10,NODE_NAME=scop-lhtr-ls10")
 
 # Setup autosave/restore
 < iocBoot/common/autoSaveConf.cmd
@@ -32,11 +36,12 @@ iocshLoad("$(TOP)/iocBoot/common/ds1.cmd", "NODE_NAME=scop-lhtr-ls10,P=SCOP:LHTR
 # Start EPICS
 iocInit()
 
-epicsThreadSleep(1)
-dbpf "SCOP:LHTR:LS10:BO_UPDATE.SCAN","0"
-dbpf "SCOP:LHTR:LS10:MBBO_TRACE_MODE",1
-dbpf SCOP:LHTR:LS10:BO_TIMDLY_STATE 1
-dbpf SCOP:LHTR:LS10:BO_RD_TRACE 1
+# Old support for Rigol
+# epicsThreadSleep(1)
+# dbpf "SCOP:LHTR:LS10:BO_UPDATE.SCAN","0"
+# dbpf "SCOP:LHTR:LS10:MBBO_TRACE_MODE",1
+# dbpf SCOP:LHTR:LS10:BO_TIMDLY_STATE 1
+# dbpf SCOP:LHTR:LS10:BO_RD_TRACE 1
 # dbpf SCOP:LHTR:LS10:WF_SAV_PATH "/u1/lcls/physics/Oscilloscope/${IOC}"
 
 # Turn on caPutLogging:
