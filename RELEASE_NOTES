@@ -7,11 +7,18 @@
 #        scope-asyn module based on Zen's general scope support.
 #
 #==============================================================
+
+R1.2.6  10-Jun-2024  M. Dunning (mdunning)
+        FACET: Add new scope IOC sioc-li20-sc01 for MDO loss fiber scope
+
 R1.2.5  30-Apr-2024 S. Alverson (alverson)
         LCLS: Replace Rigol with new Tex MDO for LHTR timing
 
 R1.2.4  12-Oct-2023 G. Brown (gwbrown)
         DEV: Modify B15 to use SCOP-AMRF-RF01-LCLSDEV
+
+R1.2.3  10-Oct-2023  M. Dunning (mdunning)
+        TESTFAC: Add dev IOC sioc-b128-sc01
 
 R1.2.2  20-Jun-2023  M. Dunning (mdunning)
         LCLS: Move HOM scopes from sioc-sys0-sc01 to new IOC sioc-sys0-sc02; scopes are now Tek MDO34
