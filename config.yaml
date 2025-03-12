@@ -1,27 +1,23 @@
-# Build YAML
-format: 1
-
 # [Required]
+# Basic component information
 repo: oscilloscope
 organization: ad-build-test
+url: https://github.com/ad-build-test/oscilloscope
+description: Oscilloscope app taken from /afs/slac.stanford.edu/g/cd/swe/git/repos/slac/Oscilloscopes/Oscilloscope.git
+
+# [Required]
+# Continous integration
+approvalRule: all
+testingCriteria: all
+issueTracker: github
+jiraProjectKey: n/a
 
 # [Required]
 # Environments this app runs on
 environments:
-  - rhel7
+   - RHEL7
 
 # [Optional] 
-# Build Script for building the component
+# Build method for building the component
 # Can be a simple command like 'make'
 build: make
-
-# [Optional]
-# dependencies this app needs built
-# component: tag name
-dependencies:
-  - epics-base: 7.0.3.1-1.0
-  - asyn: R4.39-1.0.2
-  - autosave: R5.10-1.1.0
-  - caPutLog: R4.0-1.0.0
-  - iocAdmin: R3.1.16-1.4.0
-  - scope-asyn: R1.5.1
