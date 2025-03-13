@@ -8,6 +8,9 @@
 #
 #==============================================================
 
+tag:R1.3.0  13-Mar-2024  P. Nisperos (pnispero)
+        Dev: Fixed non-existent bug
+
 R1.2.8  23-Jul-2024  M. Dunning (mdunning)
         Dev: Add new IOC sioc-b34-sc04
 
