@@ -7,6 +7,8 @@
 #        scope-asyn module based on Zen's general scope support.
 #
 #==============================================================
+tag:R1.3.1  19-May-2024  P. Nisperos (pnispero)
+        Dev: Updated config.yaml
 
 tag:R1.3.0  13-Mar-2024  P. Nisperos (pnispero)
         Dev: Fixed non-existent bug
