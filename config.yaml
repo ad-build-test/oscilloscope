@@ -17,6 +17,11 @@ jiraProjectKey: n/a
 environments:
    - RHEL7
 
+# [Required]
+# Type of deployment
+# Types: [ioc, hla, tools, matlab, pydm]
+deploymentType: ioc
+
 # [Optional] 
 # Build method for building the component
 # Can be a simple command like 'make'
