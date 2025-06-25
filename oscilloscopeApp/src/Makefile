@@ -5,6 +5,24 @@ include $(TOP)/configure/CONFIG
 #  ADD MACRO DEFINITIONS AFTER THIS LINE
 #=============================
 
+# =====================================================
+# Path to "NON EPICS" External PACKAGES: USER INCLUDES
+# =====================================================
+
+# ======================================================
+# PATH TO "NON EPICS" EXTERNAL PACKAGES: USER LIBRARIES
+# ======================================================
+tirpc_DIR = $(TIRPC_LIB)
+# ======================================================
+
+# ======================================================
+# LINK "NON EPICS" EXTERNAL PACKAGE LIBRARIES STATICALLY
+# =======================================================
+ifeq ($(NEEDS_TIRPC),YES)
+USR_LIBS_Linux += tirpc
+endif
+# =======================================================
+
 #=============================
 # Build the IOC application
 PROD_NAME = oscilloscope

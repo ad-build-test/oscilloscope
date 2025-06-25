@@ -44,7 +44,9 @@ DIRECTORY_TARGETS += $(INSTALL_LOCATION_STARTUP)
 #HOST_OPT = NO
 #CROSS_OPT = NO
 
-LINUX_VERSION=rhel6
+ifdef T_A
+PKG_ARCH=$(T_A)
+endif
 
 # These allow developers to override the CONFIG_SITE variable
 # settings without having to modify the configure/CONFIG_SITE
