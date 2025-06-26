@@ -1,4 +1,4 @@
-#!../../bin/rhel6-x86_64/oscilloscope
+#!../../bin/rhel9-x86_64/oscilloscope
 #==============================================================
 #
 #  Abs:  Startup Script for the FACET-II Scopes
