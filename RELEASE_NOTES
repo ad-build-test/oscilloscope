@@ -7,6 +7,8 @@
 #        scope-asyn module based on Zen's general scope support.
 #
 #==============================================================
+tag:R1.2.12  27-Oct-2025  P. Nisperos (pnispero)
+        Add mock unit tests
 
 R1.2.11  24-Oct-2025  M. Dunning (mdunning)
         TESTFAC: Update sioc-sys6-sc01 with currently used scopes (XTA/NLCTA)
