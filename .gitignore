@@ -2,7 +2,6 @@
 *.d
 
 # eco products
-RELEASE_SITE
 envPaths
 
 # Build products

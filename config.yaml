@@ -1,0 +1,29 @@
+# [Required]
+# Basic component information
+repo: oscilloscope
+organization: ad-build-test
+url: https://github.com/ad-build-test/oscilloscope
+description: oscilloscope app taken from slaclab for testing software factory
+
+# [Required]
+# Continous integration
+approvalRule: all
+testingCriteria: all
+issueTracker: github
+jiraProjectKey: n/a
+
+# [Required]
+# Environments this app runs on
+environments:
+   - ROCKY9
+   - RHEL7
+
+# [Required]
+# Type of deployment
+# Types: [ioc, hla, tools, matlab, pydm, container]
+deploymentType: ioc
+
+# [Optional] 
+# Build method for building the component
+# Can be a simple command like 'make'
+build: make
