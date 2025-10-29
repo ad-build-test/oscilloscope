@@ -4,7 +4,7 @@
 set -e
 
 ARCH="${EPICS_HOST_ARCH:-linux-x86_64}"
-IOC_TOP="${1:-.}"
+IOC_TOP="${1:-../}"
 
 echo "=== IOC Build Test ==="
 echo "Architecture: $ARCH"
