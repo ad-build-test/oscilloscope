@@ -7,6 +7,9 @@
 #        scope-asyn module based on Zen's general scope support.
 #
 #==============================================================
+tag:R1.2.15  30-Oct-2025  P. Nisperos (pnispero)
+        Fix problem 2
+
 tag:R1.2.14  29-Oct-2025  P. Nisperos (pnispero)
         Add ioc build test
 
